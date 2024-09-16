@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -18,10 +18,22 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+input {
+  color: black;
+}
+
+.inputWithLabel {
+  @apply flex flex-col gap-2
+}
+
+.button {
+  @apply max-w-fit border rounded-md px-3 py-1 border-cyan-700 text-cyan-700 hover:shadow-md transition-all
 }
