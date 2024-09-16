@@ -8,7 +8,7 @@ export default async function CreateClientPage() {
     redirect('/clients');
   }
   return(
-    <main className="mx-10">
+    <main>
       <h1 className="text-4xl">Crear nou client</h1>
       <form action={formSubmit} className="flex flex-col max-w-md mx-auto gap-5 my-10">
         <div className="inputWithLabel">

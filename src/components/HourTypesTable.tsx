@@ -27,7 +27,7 @@ export default function HourTypesTable({hourTypes}: {hourTypes: HourType[]}) {
             <p>{hourType.price.toString()}</p>
             <p className="flex gap-2">
               <DeleteButton clientId={hourType.id} deleteHandler={deleteHandler} />
-              <Link href={`/clients/${hourType.id}`}><IconPencil className="hover:text-cyan-600"/></Link>
+              <Link href={`/hour-types/${hourType.id}`}><IconPencil className="hover:text-cyan-600"/></Link>
             </p>
           </div>
         ))

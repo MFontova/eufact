@@ -12,7 +12,7 @@ export default async function ClientEditPage({params}: {params: {id: string}}) {
   }
 
   return(
-    <main className="mx-10">
+    <main>
       <p>Edita el client <span className="font-semibold" >{client?.name} {client?.surname}</span></p>
       <form action={formSubmit} className="flex flex-col max-w-md mx-auto gap-5 my-10">
         <label htmlFor="name">Nom</label>

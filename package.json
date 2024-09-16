@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formkit/tempo": "^0.1.2",
     "@prisma/client": "^5.19.1",
     "@remixicon/react": "^4.2.0",
     "@tabler/icons-react": "^3.17.0",

@@ -25,6 +25,7 @@ model Clients {
   email String
   birthdate String
   town String
+  createdAt DateTime @default(now())
 
   WorkRegister WorkRegister[]
 }
@@ -34,6 +35,7 @@ model WorkRegister {
   clientId String
   hourTypeId String
   hourNumber Decimal
+  createdAt DateTime @default(now())
 
   client Clients @relation(fields: [clientId], references: [id])
   hourType HourType @relation(fields: [hourTypeId], references: [id])
