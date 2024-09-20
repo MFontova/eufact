@@ -30,7 +30,7 @@ export default function ClientsTable({clients}: {clients: Clients[]}) {
             <p>{client.birthdate}</p>
             <p>{client.town}</p>
             <p className="flex gap-2">
-              <DeleteButton clientId={client.id} deleteHandler={deleteHandler} />
+              <DeleteButton itemId={client.id} deleteHandler={deleteHandler} />
               <Link href={`/clients/${client.id}`}><IconPencil className="hover:text-cyan-600"/></Link>
             </p>
           </div>
