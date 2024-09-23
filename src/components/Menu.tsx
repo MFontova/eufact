@@ -15,7 +15,11 @@ const menuItems = [
   {
     label: 'Registres',
     path: '/work-registers'
-  }
+  },
+  {
+    label: 'Factures',
+    path: '/factures'
+  },
 ]
 
 export default function Menu() {

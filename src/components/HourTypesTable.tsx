@@ -4,6 +4,7 @@ import { IconPencil } from "@tabler/icons-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import DeleteButton from "./DeleteButton";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeaderCell, TableRoot, TableRow } from "./tremor/Table";
 
 export default function HourTypesTable({hourTypes}: {hourTypes: HourType[]}) {
   
@@ -12,6 +13,35 @@ export default function HourTypesTable({hourTypes}: {hourTypes: HourType[]}) {
     await deleteHourType(hourTypeId)
     redirect('/hour-types')
   }
+
+  return (
+    <TableRoot>
+      <Table>
+        <TableCaption>{"Tipus d'hores"}</TableCaption>
+        <TableHead>
+          <TableHeaderCell>{"Tipus d'hora"}</TableHeaderCell>
+          <TableHeaderCell>Preu</TableHeaderCell>
+          <TableHeaderCell>Accions</TableHeaderCell>
+        </TableHead>
+        <TableBody>
+          {
+            hourTypes.map(hour => (
+              <TableRow key={hour.id}>
+                <TableCell>{hour.description}</TableCell>
+                <TableCell>{hour.price.toString()}</TableCell>
+                <TableCell>
+                  <div className="flex gap-2">
+                    <DeleteButton itemId={hour.id} deleteHandler={deleteHandler} />
+                    <Link href={`/hour-types/${hour.id}`}><IconPencil className="hover:text-cyan-600"/></Link>
+                  </div>
+                </TableCell>
+              </TableRow>
+            ))
+          }
+        </TableBody>
+      </Table>
+    </TableRoot>
+  )
 
   return (
     <div className="my-10">

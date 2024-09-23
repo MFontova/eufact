@@ -28,6 +28,8 @@ model Clients {
   createdAt DateTime @default(now())
 
   WorkRegister WorkRegister[]
+
+  Bills Bills[]
 }
 
 model WorkRegister {
@@ -35,8 +37,22 @@ model WorkRegister {
   clientId String
   hourTypeId String
   hourNumber Decimal
+  billId String?
   createdAt DateTime @default(now())
 
   client Clients @relation(fields: [clientId], references: [id])
   hourType HourType @relation(fields: [hourTypeId], references: [id])
+
+  bill Bills? @relation(fields: [billId], references: [id])
+}
+
+model Bills {
+  id String @id @default(uuid())
+  clientId String
+  billingMonth Int
+  billingYear Int
+  createdAt DateTime @default(now())
+
+  client Clients @relation(fields: [clientId], references: [id])
+  workRegisters WorkRegister[]
 }

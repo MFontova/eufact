@@ -1,4 +1,5 @@
 import HourTypesTable from "@/components/HourTypesTable"
+import { Button } from "@/components/tremor/Button"
 import { db } from "@/services/db"
 import Link from "next/link"
 
@@ -9,7 +10,9 @@ export default async function HourTypesPage() {
     <main>
       <h1 className="text-4xl">Tipus hores</h1>
       <div className="flex justify-end">
-        <Link href={'/hour-types/new'} className="button" >Agefir nou tipus hora</Link>
+        <Button>
+          <Link href={'/hour-types/new'} >Agefir nou tipus hora</Link>
+        </Button>
       </div>
       <HourTypesTable hourTypes={hourTypes} />
     </main>
