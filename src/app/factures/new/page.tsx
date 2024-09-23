@@ -1,7 +1,6 @@
 import { createBill } from "@/actions/billsActions";
 import BillMonthInput from "@/components/BillMonthInput";
 import ClientSelect from "@/components/ClientSelect";
-import DiscountInput from "@/components/DiscountInput";
 import { Button } from "@/components/tremor/Button";
 import { db } from "@/services/db";
 import { redirect } from "next/navigation";
@@ -23,7 +22,6 @@ export default async function NewBillPage() {
       <form action={formAction} className="max-w-lg mx-auto flex flex-col gap-5">
         <ClientSelect clients={clients} />
         <BillMonthInput/>
-        <DiscountInput/>
         <Button type="submit" className="max-w-xs mx-auto">Facturar</Button>
       </form>
     </main>

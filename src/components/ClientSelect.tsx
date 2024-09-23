@@ -1,14 +1,14 @@
 "use client"
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/tremor/Select";
-import { Clients } from "@prisma/client";
+import { Clients, WorkRegister } from "@prisma/client";
 import { Label } from "./tremor/Label";
 
-export default function ClientSelect({clients}: {clients: Clients[]}) {
+export default function ClientSelect({clients, workRegister}: {clients: Clients[], workRegister?: WorkRegister}) {
   return(
     <div>
       <Label htmlFor="client">Selecciona un client</Label>
-      <Select name="client">
+      <Select name="client" defaultValue={workRegister?.clientId} disabled={workRegister && true} >
         <SelectTrigger>
           <SelectValue placeholder="Selecciona un client" />
         </SelectTrigger>
